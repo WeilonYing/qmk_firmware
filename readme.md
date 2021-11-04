@@ -1,3 +1,23 @@
+# Bad Apple!! but on a QMK keyboard
+YouTube demo: https://www.youtube.com/watch?v=6KbRA2RjhgQ
+
+Check out this commit 
+
+If you're looking for the source code, check it out here: https://github.com/WeilonYing/qmk_firmware/commit/1888d3eab2a019734eba190837361ce37ff13432
+
+## How this works
+QMK supports custom animation cycles written in C. At a high level, this simply means that the keyboard can play the animation as long as we can convert it into something it can read. My process was as follows:
+1. I took the bad apple video, downsampled and cropped it to 20x6 at 10fps using the ffmpeg tool.
+2. Wrote a python script and used opencv to convert it into an array of 20x6 boolean matrices, and had it spit that out as predefined constant in a C header file. You can find the [script here](https://github.com/WeilonYing/qmk_firmware/commit/1888d3eab2a019734eba190837361ce37ff13432#diff-1d56b7a1b91f493e1ee5b6338842634b4a5afa0b9a85893f7a65c86e3de49390), and my [outputted header file here](https://github.com/WeilonYing/qmk_firmware/commit/1888d3eab2a019734eba190837361ce37ff13432#diff-7bdc675226110936f146df04388507d46f38c02a98abc3e53b4837b164fd759d).
+3. Modified a pre-existing animation runner on the firmware to make the max counter the number of frames in the header file, then stuffed the whole thing into a 226kb compiled binary
+4. Flashed the keyboard with the new compiled firmware 
+
+The Massdrop CTRL keyboard has about 256kb of program memory, and this was its main limitation. This could probably be compressed and optimised further, but you'd probably also need to implement a decompression algorithm in the firmware, and I didn't have time to do that.
+
+Feel free to take this code and improve upon it or adapt it for your own use. But I do ask that you credit me if you do so.
+
+---
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
