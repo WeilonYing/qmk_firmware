@@ -10,7 +10,7 @@ QMK supports custom animation cycles written in C. At a high level, this simply 
 3. Modified a pre-existing animation runner on the firmware to make the max counter the number of frames in the header file, then stuffed the whole thing into a 226kb compiled binary
 4. Flashed the keyboard with the new compiled firmware 
 
-The Massdrop CTRL keyboard has about 256kb of program memory, and this was its main limitation on the resolution and framerate of the video. The video frames could probably be compressed and optimised further, but you'd probably also need to implement a decompression algorithm in the firmware, and I didn't have time to do that.
+My keyboard, the Massdrop CTRL, has about 256kb of program memory, and this was the main limitation on the resolution and framerate of the video. The video frames could probably be compressed and optimised further, but you'd probably also need to implement a decompression algorithm in the firmware, and I didn't have time to do that.
 
 Feel free to take this code and improve upon it or adapt it for your own use. But I do ask that you credit me if you do so.
 
