@@ -1,5 +1,5 @@
 # Bad Apple!! but on a QMK keyboard
-YouTube demo: https://www.youtube.com/watch?v=6KbRA2RjhgQ
+YouTube demo: https://www.youtube.com/watch?v=lEyzKfttSmM
 
 If you're looking for the source code, check it out here: https://github.com/WeilonYing/qmk_firmware/commit/1888d3eab2a019734eba190837361ce37ff13432
 
