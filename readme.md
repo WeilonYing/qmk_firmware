@@ -16,6 +16,8 @@ The Massdrop CTRL keyboard has about 256kb of program memory, and this was its m
 
 Feel free to take this code and improve upon it or adapt it for your own use. But I do ask that you credit me if you do so.
 
+*Original QMK documentation below*
+
 ---
 
 # Quantum Mechanical Keyboard Firmware
